@@ -1,0 +1,149 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                Apex Trader MT4   |
+//|                                Developer's Site: forexroboteasy.com|
+//|                                Development by: Forex Robot Easy Team|
+//+------------------------------------------------------------------+
+
+// Include necessary libraries and define global variables
+#include <Trade\Trade.mqh>
+#include <Arrays\ArrayObj.mqh>
+#include <Arrays\ArrayInt.mqh>
+#include <Arrays\ArrayDouble.mqh>
+
+CTrade trade;
+ArrayObj strategyList;
+ArrayInt meanReversionParams;
+ArrayInt trendFollowingParams;
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|  Main Program                                                    |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OnStart()
+{
+    // Initialize the strategy parameters
+    InitializeStrategyParams();
+
+    // Apply mean-reversion strategy
+    if (IsMeanReversionEnabled())
+    {
+        ApplyMeanReversionStrategy();
+    }
+
+    // Apply trend-following strategy
+    if (IsTrendFollowingEnabled())
+    {
+        ApplyTrendFollowingStrategy();
+    }
+
+    // Apply smart grid system
+    ApplySmartGridSystem();
+
+    // Execute trading operations
+    ExecuteTradingOperations();
+
+    // Print final execution summary
+    PrintExecutionSummary();
+}
+
+//+------------------------------------------------------------------+
+//|  Function to initialize the strategy parameters                    |
+//+------------------------------------------------------------------+
+void InitializeStrategyParams()
+{
+    // Initialize the mean-reversion parameters
+    meanReversionParams.Add(10); // period
+    meanReversionParams.Add(2);  // deviation
+
+    // Initialize the trend-following parameters
+    trendFollowingParams.Add(20); // period
+    trendFollowingParams.Add(30); // stop loss
+    trendFollowingParams.Add(50); // take profit
+}
+
+//+------------------------------------------------------------------+
+//|  Function to check if mean-reversion strategy is enabled          |
+//+------------------------------------------------------------------+
+bool IsMeanReversionEnabled()
+{
+    // Check if mean-reversion parameters are set
+    if (meanReversionParams.Total() > 0)
+        return true;
+    else
+        return false;
+}
+
+//+------------------------------------------------------------------+
+//|  Function to check if trend-following strategy is enabled         |
+//+------------------------------------------------------------------+
+bool IsTrendFollowingEnabled()
+{
+    // Check if trend-following parameters are set
+    if (trendFollowingParams.Total() > 0)
+        return true;
+    else
+        return false;
+}
+
+//+------------------------------------------------------------------+
+//|  Function to apply mean-reversion strategy                        |
+//+------------------------------------------------------------------+
+void ApplyMeanReversionStrategy()
+{
+    // Code for mean-reversion strategy goes here
+    // ...
+    // ...
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//|  Function to apply trend-following strategy                       |
+//+------------------------------------------------------------------+
+void ApplyTrendFollowingStrategy()
+{
+    // Code for trend-following strategy goes here
+    // ...
+    // ...
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//|  Function to apply smart grid system                              |
+//+------------------------------------------------------------------+
+void ApplySmartGridSystem()
+{
+    // Code for smart grid system goes here
+    // ...
+    // ...
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//|  Function to execute trading operations                           |
+//+------------------------------------------------------------------+
+void ExecuteTradingOperations()
+{
+    // Code for trading operations goes here
+    // ...
+    // ...
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//|  Function to print the final execution summary                    |
+//+------------------------------------------------------------------+
+void PrintExecutionSummary()
+{
+    // Code to print execution summary goes here
+    // ...
+    // ...
+    // ...
+}
